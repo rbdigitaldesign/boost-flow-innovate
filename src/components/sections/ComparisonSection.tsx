@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const criteria = [
   { label: "Installation", standard: "Already installed", wholehouse: "Professional required", showerboost: "DIY, 30 seconds" },
-  { label: "Cost (AUD)", standard: "$15–50", wholehouse: "$500–1,200+", showerboost: "~$100–130" },
+  { label: "Cost (AUD)", standard: "$15–50", wholehouse: "$500–1,200+", showerboost: "$249" },
   { label: "Pressure Improvement", standard: "None", wholehouse: "High", showerboost: "Moderate–High" },
   { label: "Portability", standard: "Fixed", wholehouse: "Fixed", showerboost: "Fully portable" },
   { label: "Energy Use", standard: "None", wholehouse: "High", showerboost: "Low (battery)" },
