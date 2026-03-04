@@ -16,9 +16,11 @@ const SimulationSection = () => {
   const basePressure = Math.min(100, (parsedFlow / 15) * 100);
   const batteryFactor = battery / 100;
   const pumpBoost = pumpMode === "off" ? 0 : pumpMode === "low" ? 25 * batteryFactor : 50 * batteryFactor;
-  const effectivePressure = Math.min(100, basePressure + pumpBoost);
+  const filterFactor = filterCondition / 100;
+  const rawPressure = basePressure + pumpBoost;
+  const effectivePressure = Math.min(100, rawPressure * (0.5 + 0.5 * filterFactor));
   const flowStrength = effectivePressure > 70 ? "Strong" : effectivePressure > 40 ? "Moderate" : "Weak";
-  const outputLpm = Math.min(25, parsedFlow + (pumpMode === "off" ? 0 : pumpMode === "low" ? 2 : 4) * batteryFactor);
+  const outputLpm = Math.min(25, (parsedFlow + (pumpMode === "off" ? 0 : pumpMode === "low" ? 2 : 4) * batteryFactor) * (0.6 + 0.4 * filterFactor));
   const waterQuality = filterCondition > 70 ? "Clean" : filterCondition > 40 ? "Slightly Cloudy" : filterCondition > 15 ? "Discoloured" : "Very Poor";
   const stability = battery > 20 && pumpMode !== "off" ? "Stable" : pumpMode === "off" ? "Unassisted" : "Fluctuating";
   const ledColor = battery > 60 ? "bg-success" : battery > 25 ? "bg-warning" : "bg-destructive";

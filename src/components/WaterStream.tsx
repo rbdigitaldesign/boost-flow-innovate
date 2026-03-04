@@ -21,7 +21,7 @@ const WaterStream = ({
   waterOpacity = 0.7,
 }: WaterStreamProps) => {
   const droplets = useMemo(() => {
-    const count = Math.floor((intensity / 100) * 30) + 3;
+    const count = Math.floor((intensity / 100) * 60) + 3;
     return Array.from({ length: count }, (_, i) => ({
       id: i,
       x: (Math.random() - 0.5) * (width * 0.6),

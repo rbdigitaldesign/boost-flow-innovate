@@ -42,7 +42,7 @@ const Index = () => {
         <RecirculationSection />
       </SectionWrapper>
 
-      <ParallaxBanner image="/images/shower-woman-2.jpg" height="h-[300px]">
+      <ParallaxBanner image="/images/shower-fixture.jpg" height="h-[300px]">
         <div className="text-center">
           <h3 className="font-heading font-extrabold text-2xl md:text-3xl text-primary-foreground mb-3">
             Curious how it performs?
