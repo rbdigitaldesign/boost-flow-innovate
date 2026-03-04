@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        body: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        heading: ['"Outfit"', 'system-ui', 'sans-serif'],
+        body: ['"DM Sans"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -59,6 +59,7 @@ export default {
           DEFAULT: "hsl(var(--water-blue))",
           light: "hsl(var(--water-blue-light))",
           dark: "hsl(var(--water-blue-dark))",
+          deep: "hsl(var(--water-deep))",
         },
         success: "hsl(var(--success))",
         warning: "hsl(var(--warning))",

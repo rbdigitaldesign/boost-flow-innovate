@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,44 +7,45 @@
 @layer base {
   :root {
     --background: 210 25% 97%;
-    --foreground: 215 30% 15%;
+    --foreground: 210 40% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 30% 15%;
+    --card-foreground: 210 40% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 30% 15%;
+    --popover-foreground: 210 40% 10%;
 
-    --primary: 205 85% 55%;
+    --primary: 200 85% 48%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 15% 93%;
-    --secondary-foreground: 215 30% 20%;
+    --secondary-foreground: 210 30% 20%;
 
     --muted: 210 15% 95%;
-    --muted-foreground: 215 10% 50%;
+    --muted-foreground: 210 10% 45%;
 
-    --accent: 205 60% 90%;
-    --accent-foreground: 205 85% 35%;
+    --accent: 200 60% 90%;
+    --accent-foreground: 200 85% 30%;
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 210 20% 90%;
     --input: 210 20% 90%;
-    --ring: 205 85% 55%;
+    --ring: 200 85% 48%;
 
     --radius: 0.75rem;
 
     --chrome: 210 5% 75%;
     --chrome-light: 210 10% 92%;
-    --water-blue: 200 80% 60%;
-    --water-blue-light: 200 80% 85%;
-    --water-blue-dark: 205 90% 40%;
+    --water-blue: 200 80% 55%;
+    --water-blue-light: 195 80% 85%;
+    --water-blue-dark: 205 90% 35%;
+    --water-deep: 210 70% 20%;
     --success: 150 60% 45%;
     --warning: 40 90% 55%;
 
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
 }
 
@@ -58,7 +59,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, sans-serif;
   }
 }
 
@@ -68,7 +69,19 @@
   }
 
   .water-gradient {
-    background: linear-gradient(135deg, hsl(200 80% 60%), hsl(205 90% 40%));
+    background: linear-gradient(135deg, hsl(195 85% 55%), hsl(205 90% 35%));
+  }
+
+  .water-gradient-subtle {
+    background: linear-gradient(180deg, hsl(200 80% 95%), hsl(210 25% 97%));
+  }
+
+  .water-gradient-dark {
+    background: linear-gradient(135deg, hsl(210 70% 15%), hsl(205 80% 25%));
+  }
+
+  .water-gradient-hero {
+    background: linear-gradient(160deg, hsl(210 70% 12%), hsl(200 80% 22%), hsl(195 75% 30%));
   }
 
   .chrome-gradient {
@@ -76,9 +89,44 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, hsl(205 85% 55%), hsl(205 90% 40%));
+    background: linear-gradient(135deg, hsl(195 85% 55%), hsl(205 90% 35%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-gradient-bold {
+    background: linear-gradient(135deg, hsl(195 90% 60%), hsl(180 70% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-divider {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, hsl(200 80% 55%), transparent);
+    border-radius: 2px;
+  }
+
+  .wave-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='%23e8f4f8' d='M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,80C672,85,768,75,864,64C960,53,1056,43,1152,42.7C1248,43,1344,53,1392,58.7L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 80px;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 }
