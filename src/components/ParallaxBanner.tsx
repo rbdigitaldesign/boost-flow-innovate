@@ -5,9 +5,10 @@ interface ParallaxBannerProps {
   height?: string;
   overlay?: boolean;
   children?: React.ReactNode;
+  bgPosition?: string;
 }
 
-const ParallaxBanner = ({ image, height = "h-[400px]", overlay = true, children }: ParallaxBannerProps) => {
+const ParallaxBanner = ({ image, height = "h-[400px]", overlay = true, children, bgPosition = "center" }: ParallaxBannerProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
 
@@ -30,9 +31,10 @@ const ParallaxBanner = ({ image, height = "h-[400px]", overlay = true, children 
   return (
     <div ref={ref} className={`relative ${height} overflow-hidden`}>
       <div
-        className="absolute inset-0 w-full h-[140%] bg-cover bg-center will-change-transform"
+        className="absolute inset-0 w-full h-[140%] bg-cover will-change-transform"
         style={{
           backgroundImage: `url(${image})`,
+          backgroundPosition: bgPosition,
           transform: `translateY(${offset - 40}px)`,
         }}
       />
