@@ -5,9 +5,21 @@ interface WaterStreamProps {
   intensity: number; // 0-100
   width?: number;
   height?: number;
+  waterHue?: number;
+  waterSaturation?: number;
+  waterLightness?: number;
+  waterOpacity?: number;
 }
 
-const WaterStream = ({ intensity, width = 120, height = 200 }: WaterStreamProps) => {
+const WaterStream = ({
+  intensity,
+  width = 120,
+  height = 200,
+  waterHue = 200,
+  waterSaturation = 80,
+  waterLightness = 60,
+  waterOpacity = 0.7,
+}: WaterStreamProps) => {
   const droplets = useMemo(() => {
     const count = Math.floor((intensity / 100) * 30) + 3;
     return Array.from({ length: count }, (_, i) => ({
@@ -23,7 +35,7 @@ const WaterStream = ({ intensity, width = 120, height = 200 }: WaterStreamProps)
     <div className="relative flex items-start justify-center" style={{ width, height }}>
       {/* Shower head */}
       <div className="absolute top-0 w-16 h-3 rounded-b-lg chrome-gradient" />
-      
+
       {/* Water drops */}
       {droplets.map((drop) => (
         <motion.div
@@ -34,11 +46,11 @@ const WaterStream = ({ intensity, width = 120, height = 200 }: WaterStreamProps)
             top: 12,
             width: drop.size,
             height: drop.size * 2.5,
-            background: `linear-gradient(180deg, hsl(200 80% ${70 - intensity * 0.2}%), hsl(205 90% ${50 - intensity * 0.1}%))`,
+            background: `linear-gradient(180deg, hsla(${waterHue}, ${waterSaturation}%, ${waterLightness + 10}%, ${waterOpacity}), hsla(${waterHue}, ${waterSaturation}%, ${waterLightness - 10}%, ${waterOpacity}))`,
           }}
           animate={{
             y: [0, height - 20],
-            opacity: [0, 0.8, 0],
+            opacity: [0, 0.8 * waterOpacity, 0],
           }}
           transition={{
             duration: drop.speed,
@@ -52,8 +64,12 @@ const WaterStream = ({ intensity, width = 120, height = 200 }: WaterStreamProps)
       {/* Splash at bottom */}
       {intensity > 30 && (
         <motion.div
-          className="absolute bottom-0 rounded-full water-gradient"
-          style={{ width: intensity * 0.8, height: 4 }}
+          className="absolute bottom-0 rounded-full"
+          style={{
+            width: intensity * 0.8,
+            height: 4,
+            background: `hsla(${waterHue}, ${waterSaturation}%, ${waterLightness}%, 0.4)`,
+          }}
           animate={{ opacity: [0.3, 0.6, 0.3], scale: [0.9, 1.1, 0.9] }}
           transition={{ duration: 1.5, repeat: Infinity }}
         />
