@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Building2, PipetteIcon, MapPin, Droplets } from "lucide-react";
-import WaterStream from "../WaterStream";
+import beforeAfterImg from "@/assets/before-after-pressure.png";
 
 const causes = [
   { icon: MapPin, label: "Distance from water supply" },
@@ -22,29 +22,31 @@ const ProblemSection = () => {
         </p>
       </div>
 
-      {/* Comparison */}
-      <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-2xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="glass-card rounded-2xl p-6 md:p-8 flex flex-col items-center"
-        >
-          <p className="text-sm font-bold text-destructive mb-4">Low Pressure</p>
-          <WaterStream intensity={15} height={160} />
-          <p className="text-xs text-muted-foreground mt-4">Annoyingly weak pressure</p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="glass-card rounded-2xl p-6 md:p-8 flex flex-col items-center border-primary/30 ring-2 ring-primary/10"
-        >
-          <p className="text-sm font-bold text-primary mb-4">With ShowerBoost</p>
-          <WaterStream intensity={85} height={160} />
-          <p className="text-xs text-muted-foreground mt-4">Powerful, consistent flow</p>
-        </motion.div>
-      </div>
+      {/* Real before/after comparison image */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="max-w-3xl mx-auto"
+      >
+        <div className="glass-card rounded-3xl p-3 overflow-hidden">
+          <img
+            src={beforeAfterImg}
+            alt="Before and after comparison — weak pressure vs ShowerBoost enhanced flow"
+            className="w-full rounded-2xl"
+          />
+        </div>
+        <div className="flex justify-between mt-4 px-4">
+          <div className="text-center flex-1">
+            <p className="text-sm font-bold text-destructive">Without ShowerBoost</p>
+            <p className="text-xs text-muted-foreground">Weak, inconsistent trickle</p>
+          </div>
+          <div className="text-center flex-1">
+            <p className="text-sm font-bold text-primary">With ShowerBoost</p>
+            <p className="text-xs text-muted-foreground">Powerful, consistent spray</p>
+          </div>
+        </div>
+      </motion.div>
 
       {/* Causes */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">

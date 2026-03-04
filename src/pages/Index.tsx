@@ -10,6 +10,7 @@ import RecirculationSection from "@/components/sections/RecirculationSection";
 import SimulationSection from "@/components/sections/SimulationSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import ComparisonSection from "@/components/sections/ComparisonSection";
+import WhatsInTheBoxSection from "@/components/sections/WhatsInTheBoxSection";
 import FeedbackSection from "@/components/sections/FeedbackSection";
 
 const Index = () => {
@@ -23,13 +24,13 @@ const Index = () => {
         <ProblemSection />
       </SectionWrapper>
 
-      <ParallaxBanner image="/images/shower-woman-1.jpg" height="h-[350px]">
+      <ParallaxBanner image="/images/product-installation.png" height="h-[350px]">
         <div className="text-center">
           <h3 className="font-heading font-extrabold text-3xl md:text-4xl text-primary-foreground mb-4">
-            Engineered for Real Bathrooms
+            Installs in 30 Seconds
           </h3>
           <p className="text-primary-foreground/70 text-lg max-w-lg mx-auto">
-            No plumber. No rewiring. Just screw on and shower.
+            Just unscrew your shower head, screw on ShowerBoost, and reattach. No tools. No plumber. Done.
           </p>
         </div>
       </ParallaxBanner>
@@ -80,6 +81,10 @@ const Index = () => {
 
       <SectionWrapper id="comparison">
         <ComparisonSection />
+      </SectionWrapper>
+
+      <SectionWrapper id="whats-in-the-box">
+        <WhatsInTheBoxSection />
       </SectionWrapper>
 
       <ParallaxBanner image="/images/water-splash.jpg" height="h-[350px]">
