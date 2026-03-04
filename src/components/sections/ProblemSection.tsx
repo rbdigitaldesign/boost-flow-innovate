@@ -32,7 +32,7 @@ const ProblemSection = () => {
         >
           <p className="text-sm font-bold text-destructive mb-4">Low Pressure</p>
           <WaterStream intensity={15} height={160} />
-          <p className="text-xs text-muted-foreground mt-4">Frustrating drips</p>
+          <p className="text-xs text-muted-foreground mt-4">Annoyingly weak pressure</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 20 }}
