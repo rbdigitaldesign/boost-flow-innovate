@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Zap, Wrench, Battery, Filter, CircleDot, RotateCcw, Volume2 } from "lucide-react";
-import chargingDockImg from "@/assets/product-charging-dock.png";
+import batteryChargingImg from "@/assets/product-battery-charging.png";
 
 const features = [
   { icon: Zap, title: "Battery Powered Booster Pump", desc: "Efficient brushless motor delivers consistent pressure enhancement." },
@@ -52,9 +52,9 @@ const FeaturesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-8"
         >
-          <h3 className="font-heading font-extrabold text-2xl md:text-3xl mb-3">Pop Out. Charge. Pop Back In.</h3>
+          <h3 className="font-heading font-extrabold text-2xl md:text-3xl mb-3">Charge It Like Your Toothbrush</h3>
           <p className="text-muted-foreground text-base max-w-lg mx-auto">
-            The battery slides out while ShowerBoost stays screwed into your shower. Charge it on the countertop next to your toothbrush — no tools, no fuss.
+            Pop out the battery while ShowerBoost stays installed on your shower. Drop it on the charging dock right next to your electric toothbrush — it's that simple.
           </p>
         </motion.div>
 
@@ -65,13 +65,13 @@ const FeaturesSection = () => {
           className="glass-card rounded-3xl p-3 overflow-hidden"
         >
           <img
-            src={chargingDockImg}
-            alt="ShowerBoost removable battery charging on bathroom countertop"
+            src={batteryChargingImg}
+            alt="ShowerBoost battery charging on bathroom countertop next to an electric toothbrush"
             className="w-full rounded-2xl"
           />
           <div className="p-4 text-center">
-            <p className="text-sm font-bold">Removable Battery</p>
-            <p className="text-xs text-muted-foreground">Swap in seconds — charge anywhere via USB-C or magnetic dock</p>
+            <p className="text-sm font-bold">Sits Right at Home</p>
+            <p className="text-xs text-muted-foreground">Removable battery charges on your countertop — as easy as charging your toothbrush</p>
           </div>
         </motion.div>
       </div>
