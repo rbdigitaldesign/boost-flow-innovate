@@ -24,7 +24,7 @@ const Index = () => {
         <ProblemSection />
       </SectionWrapper>
 
-      <ParallaxBanner image="/images/product-installation.png" height="h-[75vh] md:h-[85vh]">
+      <ParallaxBanner image="/images/product-installation.png" height="h-[75vh] md:h-[85vh]" bgPosition="top">
         <div className="text-center">
           <h3 className="font-heading font-extrabold text-3xl md:text-4xl text-primary-foreground mb-4">
             Installs in 30 Seconds
