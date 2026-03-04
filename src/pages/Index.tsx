@@ -23,7 +23,7 @@ const Index = () => {
         <ProblemSection />
       </SectionWrapper>
 
-      <ParallaxBanner image="/images/water-droplets.jpg" height="h-[350px]">
+      <ParallaxBanner image="/images/shower-woman-1.jpg" height="h-[350px]">
         <div className="text-center">
           <h3 className="font-heading font-extrabold text-3xl md:text-4xl text-primary-foreground mb-4">
             Engineered for Real Bathrooms
@@ -42,7 +42,7 @@ const Index = () => {
         <RecirculationSection />
       </SectionWrapper>
 
-      <ParallaxBanner image="/images/water-stream.jpg" height="h-[300px]">
+      <ParallaxBanner image="/images/shower-woman-2.jpg" height="h-[300px]">
         <div className="text-center">
           <h3 className="font-heading font-extrabold text-2xl md:text-3xl text-primary-foreground mb-3">
             Curious how it performs?
@@ -63,7 +63,7 @@ const Index = () => {
         <SimulationSection />
       </SectionWrapper>
 
-      <ParallaxBanner image="/images/modern-shower.jpg" height="h-[350px]">
+      <ParallaxBanner image="/images/showerhead-closeup.jpg" height="h-[350px]">
         <div className="text-center">
           <h3 className="font-heading font-extrabold text-3xl md:text-4xl text-primary-foreground mb-4">
             Built to Last, Designed to Impress
