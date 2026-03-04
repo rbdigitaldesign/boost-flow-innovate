@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Zap, Battery, Usb, CircleDot, Filter, Gauge, RotateCcw } from "lucide-react";
-import deviceImg from "@/assets/showerboost-device.jpg";
+import deviceImg from "@/assets/product-handheld.png";
 
 const components = [
   { icon: Zap, label: "Micro brushless booster pump", desc: "Silent, efficient pressure amplification" },
@@ -36,7 +36,7 @@ const ProductConceptSection = () => {
           <div className="glass-card rounded-3xl p-3 overflow-hidden">
             <img
               src={deviceImg}
-              alt="ShowerBoost device installed between shower pipe and head"
+              alt="ShowerBoost device held in hand showing compact size with LED status ring"
               className="w-full rounded-2xl"
             />
           </div>

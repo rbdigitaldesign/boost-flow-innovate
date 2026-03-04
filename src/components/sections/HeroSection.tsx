@@ -34,55 +34,75 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground/80 text-xs font-medium mb-6"
-          >
-            <Droplets size={14} />
-            Product Concept — Patent Pending
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-            className="font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl text-primary-foreground leading-[1.05] mb-6 tracking-tight"
-          >
-            Transform Your
-            <br />
-            <span className="text-gradient-bold">Shower Pressure</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="text-lg md:text-xl text-primary-foreground/70 max-w-xl mx-auto leading-relaxed mb-10"
-          >
-            ShowerBoost is a compact inline device that screws between your shower pipe and head — boosting weak pressure with zero installation hassle.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <button
-              onClick={scrollToNext}
-              className="px-8 py-4 bg-primary-foreground text-water-deep font-bold rounded-full text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          {/* Text */}
+          <div className="text-center md:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground/80 text-xs font-medium mb-6"
             >
-              Explore the Concept
-            </button>
-            <button
-              onClick={() => document.getElementById("simulation")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-4 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-full text-lg hover:bg-primary-foreground/10 transition-all"
+              <Droplets size={14} />
+              Product Concept — Patent Pending
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.7 }}
+              className="font-heading font-extrabold text-5xl md:text-6xl lg:text-7xl text-primary-foreground leading-[1.05] mb-6 tracking-tight"
             >
-              Try the Simulator
-            </button>
+              Transform Your
+              <br />
+              <span className="text-gradient-bold">Shower Pressure</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="text-lg md:text-xl text-primary-foreground/70 max-w-xl leading-relaxed mb-10"
+            >
+              ShowerBoost is a compact inline device that screws between your shower pipe and head — boosting weak pressure with zero installation hassle.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            >
+              <button
+                onClick={scrollToNext}
+                className="px-8 py-4 bg-primary-foreground text-water-deep font-bold rounded-full text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+              >
+                Explore the Concept
+              </button>
+              <button
+                onClick={() => document.getElementById("simulation")?.scrollIntoView({ behavior: "smooth" })}
+                className="px-8 py-4 border-2 border-primary-foreground/30 text-primary-foreground font-semibold rounded-full text-lg hover:bg-primary-foreground/10 transition-all"
+              >
+                Try the Simulator
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Hero product image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="hidden md:flex justify-center"
+          >
+            <div className="relative">
+              <img
+                src="/images/product-wall-mounted.png"
+                alt="ShowerBoost device installed on a shower wall"
+                className="w-full max-w-md rounded-3xl shadow-2xl border-2 border-primary-foreground/10"
+              />
+              <div className="absolute -inset-4 rounded-3xl bg-primary-foreground/5 blur-2xl -z-10" />
+            </div>
           </motion.div>
         </div>
       </div>
