@@ -30,7 +30,7 @@ const ParallaxBanner = ({ image, height = "h-[400px]", overlay = true, children 
   return (
     <div ref={ref} className={`relative ${height} overflow-hidden`}>
       <div
-        className="absolute inset-0 w-full h-[130%] bg-cover bg-center will-change-transform"
+        className="absolute inset-0 w-full h-[140%] bg-cover bg-center will-change-transform"
         style={{
           backgroundImage: `url(${image})`,
           transform: `translateY(${offset - 40}px)`,
