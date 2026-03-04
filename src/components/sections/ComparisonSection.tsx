@@ -3,7 +3,7 @@ import { Check, X, Minus } from "lucide-react";
 
 const criteria = [
   { label: "Installation", standard: "Already installed", wholehouse: "Professional required", showerboost: "DIY, 30 seconds" },
-  { label: "Cost", standard: "£10–30", wholehouse: "£300–800+", showerboost: "~£60–80" },
+  { label: "Cost", standard: "$15–50", wholehouse: "$500–1,200+", showerboost: "~$100–130" },
   { label: "Pressure Improvement", standard: "None", wholehouse: "High", showerboost: "Moderate–High" },
   { label: "Portability", standard: "Fixed", wholehouse: "Fixed", showerboost: "Fully portable" },
   { label: "Energy Use", standard: "None", wholehouse: "High", showerboost: "Low (battery)" },
