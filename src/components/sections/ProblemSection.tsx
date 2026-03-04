@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Building2, PipetteIcon, MapPin, Droplets } from "lucide-react";
 import WaterStream from "../WaterStream";
-import pressureImg from "@/assets/pressure-comparison.jpg";
 
 const causes = [
   { icon: MapPin, label: "Distance from water supply" },
@@ -10,73 +9,59 @@ const causes = [
   { icon: Droplets, label: "Low pressure municipal supply" },
 ];
 
-interface Props {
-  onNext: () => void;
-}
-
-const ProblemSection = ({ onNext }: Props) => {
+const ProblemSection = () => {
   return (
-    <div className="space-y-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center"
-      >
-        <h1 className="text-4xl md:text-5xl font-heading font-bold mb-3">
+    <div className="space-y-12">
+      <div className="text-center max-w-3xl mx-auto">
+        <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">The Problem</p>
+        <h2 className="text-4xl md:text-5xl font-heading font-extrabold mb-4 tracking-tight">
           Weak Shower Pressure?
-        </h1>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+        </h2>
+        <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
           Millions of homes suffer from disappointing shower pressure. Here's why — and what you can do about it.
         </p>
-      </motion.div>
+      </div>
 
       {/* Comparison */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.2 }}
-        className="grid grid-cols-2 gap-6 max-w-2xl mx-auto"
-      >
-        <div className="glass-card rounded-xl p-6 flex flex-col items-center">
-          <p className="text-sm font-medium text-destructive mb-4">Low Pressure</p>
+      <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-2xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="glass-card rounded-2xl p-6 md:p-8 flex flex-col items-center"
+        >
+          <p className="text-sm font-bold text-destructive mb-4">Low Pressure</p>
           <WaterStream intensity={15} height={160} />
-          <p className="text-xs text-muted-foreground mt-3">Frustrating drips</p>
-        </div>
-        <div className="glass-card rounded-xl p-6 flex flex-col items-center border-primary/30">
-          <p className="text-sm font-medium text-primary mb-4">With ShowerBoost</p>
+          <p className="text-xs text-muted-foreground mt-4">Frustrating drips</p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="glass-card rounded-2xl p-6 md:p-8 flex flex-col items-center border-primary/30 ring-2 ring-primary/10"
+        >
+          <p className="text-sm font-bold text-primary mb-4">With ShowerBoost</p>
           <WaterStream intensity={85} height={160} />
-          <p className="text-xs text-muted-foreground mt-3">Powerful, consistent flow</p>
-        </div>
-      </motion.div>
+          <p className="text-xs text-muted-foreground mt-4">Powerful, consistent flow</p>
+        </motion.div>
+      </div>
 
       {/* Causes */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto"
-      >
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
         {causes.map((cause, i) => (
-          <div key={i} className="glass-card rounded-lg p-4 text-center">
-            <cause.icon className="mx-auto mb-2 text-primary" size={24} />
-            <p className="text-xs text-muted-foreground">{cause.label}</p>
-          </div>
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="glass-card rounded-xl p-5 text-center hover:shadow-xl transition-shadow"
+          >
+            <cause.icon className="mx-auto mb-3 text-primary" size={28} />
+            <p className="text-sm text-muted-foreground font-medium">{cause.label}</p>
+          </motion.div>
         ))}
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-        className="text-center"
-      >
-        <button
-          onClick={onNext}
-          className="water-gradient text-primary-foreground px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
-        >
-          Explore the Solution →
-        </button>
-      </motion.div>
+      </div>
     </div>
   );
 };
