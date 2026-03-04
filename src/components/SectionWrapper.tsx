@@ -13,7 +13,7 @@ const SectionWrapper = ({ id, children, className = "", dark = false, wave = fal
   return (
     <section
       id={id}
-      className={`relative py-20 md:py-28 scroll-mt-16 ${dark ? "water-gradient-dark text-primary-foreground" : ""} ${wave ? "wave-bg" : ""} ${className}`}
+      className={`relative py-20 md:py-28 scroll-mt-20 ${dark ? "water-gradient-dark text-primary-foreground" : ""} ${wave ? "wave-bg" : ""} ${className}`}
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
