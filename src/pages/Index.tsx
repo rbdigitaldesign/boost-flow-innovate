@@ -10,6 +10,7 @@ import RecirculationSection from "@/components/sections/RecirculationSection";
 import SimulationSection from "@/components/sections/SimulationSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import ComparisonSection from "@/components/sections/ComparisonSection";
+import WhyNotExistSection from "@/components/sections/WhyNotExistSection";
 import WhatsInTheBoxSection from "@/components/sections/WhatsInTheBoxSection";
 import FeedbackSection from "@/components/sections/FeedbackSection";
 
