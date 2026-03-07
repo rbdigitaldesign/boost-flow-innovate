@@ -83,6 +83,10 @@ const Index = () => {
         <ComparisonSection />
       </SectionWrapper>
 
+      <SectionWrapper id="why-not-exist" className="water-gradient-subtle">
+        <WhyNotExistSection />
+      </SectionWrapper>
+
       <SectionWrapper id="whats-in-the-box">
         <WhatsInTheBoxSection />
       </SectionWrapper>
