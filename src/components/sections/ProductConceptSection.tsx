@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap, Battery, Magnet, CircleDot, Filter, Gauge, RotateCcw } from "lucide-react";
+import { Zap, Battery, Link, CircleDot, Filter, Gauge, RotateCcw } from "lucide-react";
 import deviceImg from "@/assets/product-handheld.png";
 
 const components = [
