@@ -5,7 +5,7 @@ import deviceImg from "@/assets/product-handheld.png";
 const components = [
   { icon: Zap, label: "Magnetic drive centrifugal micro-pump", desc: "Brushless DC motor (40–80W) in sealed dry chamber, magnetic coupling spins impeller in wet chamber" },
   { icon: Battery, label: "Rechargeable lithium-ion battery", desc: "7.4–11.1V, 3000–6000mAh — approximately 3–5 showers per charge" },
-  { icon: Magnet, label: "Magnetic drive coupling", desc: "Motor and impeller connected magnetically — no shaft seal, no leak risk" },
+  { icon: Link, label: "Magnetic drive coupling", desc: "Motor and impeller connected magnetically — no shaft seal, no leak risk" },
   { icon: CircleDot, label: "LED status ring", desc: "Battery level, filter status & flow indication at a glance" },
   { icon: Filter, label: "Sediment pre-filter", desc: "Protects the impeller and improves water quality" },
   { icon: Gauge, label: "Pressure & flow sensors", desc: "Auto-activates on flow detection, ramps pump speed, shuts off when flow stops" },
