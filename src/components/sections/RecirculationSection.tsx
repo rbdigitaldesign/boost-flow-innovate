@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Droplets, Zap, RefreshCw, ShowerHead, ChevronRight } from "lucide-react";
+import { ArrowDown, Droplets, Zap, RefreshCw, ShowerHead, ChevronRight, Filter, Gauge } from "lucide-react";
 
 const steps = [
   { label: "Water In", desc: "Water enters from the pipe", icon: Droplets, iconColor: "text-blue-100" },
-  { label: "Pump Boost", desc: "Internal pump increases pressure", icon: Zap, iconColor: "text-yellow-100" },
-  { label: "Recirculation", desc: "Portion cycles through chamber", icon: RefreshCw, animate: true, iconColor: "text-white" },
+  { label: "Pre-Filter", desc: "Sediment filter protects impeller", icon: Filter, iconColor: "text-amber-100" },
+  { label: "Pressure Sensor", desc: "Detects flow, triggers pump", icon: Gauge, iconColor: "text-green-100" },
+  { label: "Pump Boost", desc: "Magnetic drive impeller adds pressure", icon: Zap, iconColor: "text-yellow-100" },
+  { label: "Stabilisation", desc: "Chamber smooths turbulent output", icon: RefreshCw, animate: true, iconColor: "text-white" },
   { label: "Water Out", desc: "Boosted water exits shower head", icon: ShowerHead, iconColor: "text-white" },
 ];
 
 const benefits = [
   "Smooths out pressure fluctuations",
-  "Increases perceived spray intensity",
-  "Reduces power requirements for the pump",
+  "Auto-activates on flow detection",
+  "PWM speed control matches demand",
 ];
 
 const RecirculationSection = () => {
@@ -20,10 +22,10 @@ const RecirculationSection = () => {
       <div className="text-center max-w-3xl mx-auto">
         <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Technology</p>
         <h2 className="text-4xl md:text-5xl font-heading font-extrabold mb-4 tracking-tight">
-          How Micro-Recirculation Works
+          Internal Flow Architecture
         </h2>
         <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto">
-          A simplified look at how water flows through the ShowerBoost device.
+          How water flows through the ShowerBoost device — from inlet to boosted output.
         </p>
       </div>
 
@@ -32,49 +34,49 @@ const RecirculationSection = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="glass-card rounded-3xl p-8 md:p-10 max-w-4xl mx-auto"
+        className="glass-card rounded-3xl p-6 md:p-10 max-w-5xl mx-auto"
       >
-        <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-2">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
-              <div key={i} className="flex flex-col md:flex-row items-center gap-2 md:gap-3">
+              <div key={i} className="flex flex-col md:flex-row items-center gap-2 md:gap-2">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1 + i * 0.12 }}
+                  transition={{ delay: 0.1 + i * 0.1 }}
                   className="flex flex-col items-center"
                 >
-                  <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-lg border-2 border-primary-foreground/20">
+                  <div className="w-16 h-16 md:w-18 md:h-18 rounded-full bg-primary/90 flex items-center justify-center shadow-lg border-2 border-primary-foreground/20">
                     {step.animate ? (
                       <motion.div animate={{ rotate: 360 }} transition={{ duration: 3, repeat: Infinity, ease: "linear" }}>
-                        <Icon size={28} className={step.iconColor} />
+                        <Icon size={24} className={step.iconColor} />
                       </motion.div>
                     ) : (
-                      <Icon size={28} className={step.iconColor} />
+                      <Icon size={24} className={step.iconColor} />
                     )}
                   </div>
-                  <p className="text-sm font-bold mt-2">{step.label}</p>
-                  <p className="text-xs text-muted-foreground text-center max-w-[120px]">{step.desc}</p>
+                  <p className="text-xs font-bold mt-2">{step.label}</p>
+                  <p className="text-[10px] text-muted-foreground text-center max-w-[100px]">{step.desc}</p>
                 </motion.div>
 
                 {i < steps.length - 1 && (
                   <div className="flex items-center">
                     <div className="hidden md:flex items-center gap-0.5">
-                      {[0, 1, 2].map((j) => (
+                      {[0, 1].map((j) => (
                         <motion.div
                           key={j}
-                          animate={{ x: [0, 4, 0] }}
-                          transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.2 + j * 0.15 }}
+                          animate={{ x: [0, 3, 0] }}
+                          transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.15 + j * 0.1 }}
                         >
-                          <ChevronRight size={18} className={`text-primary/${60 + j * 20}`} />
+                          <ChevronRight size={14} className="text-primary/70" />
                         </motion.div>
                       ))}
                     </div>
                     <div className="md:hidden">
                       <motion.div animate={{ y: [0, 4, 0] }} transition={{ duration: 1.2, repeat: Infinity }}>
-                        <ArrowDown size={18} className="text-primary" />
+                        <ArrowDown size={14} className="text-primary" />
                       </motion.div>
                     </div>
                   </div>
@@ -83,24 +85,6 @@ const RecirculationSection = () => {
             );
           })}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-6 flex justify-center"
-        >
-          <div className="relative w-48 h-12">
-            <motion.div
-              className="absolute inset-0 border-2 border-dashed border-primary/40 rounded-full"
-              animate={{ opacity: [0.4, 0.8, 0.4] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-xs text-primary font-semibold bg-card px-2">recirculation loop</span>
-            </div>
-          </div>
-        </motion.div>
       </motion.div>
 
       {/* Benefits */}
