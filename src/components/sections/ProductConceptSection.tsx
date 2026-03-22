@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { Zap, Battery, Usb, CircleDot, Filter, Gauge, RotateCcw } from "lucide-react";
+import { Zap, Battery, Magnet, CircleDot, Filter, Gauge, RotateCcw } from "lucide-react";
 import deviceImg from "@/assets/product-handheld.png";
 
 const components = [
-  { icon: Zap, label: "Micro brushless booster pump", desc: "Silent, efficient pressure amplification" },
-  { icon: Battery, label: "Rechargeable lithium battery", desc: "Weeks of use per charge" },
-  { icon: Usb, label: "USB-C charging port", desc: "Universal fast charging" },
-  { icon: CircleDot, label: "LED status ring", desc: "Battery, filter & flow status at a glance" },
-  { icon: Filter, label: "Replaceable sediment filter", desc: "Cleaner water, longer life" },
-  { icon: Gauge, label: "Pressure sensor", desc: "Auto-adjusts boost level" },
-  { icon: RotateCcw, label: "Micro-recirculation chamber", desc: "Stabilises flow, amplifies pressure" },
+  { icon: Zap, label: "Magnetic drive centrifugal micro-pump", desc: "Brushless DC motor (40–80W) in sealed dry chamber, magnetic coupling spins impeller in wet chamber" },
+  { icon: Battery, label: "Rechargeable lithium-ion battery", desc: "7.4–11.1V, 3000–6000mAh — approximately 3–5 showers per charge" },
+  { icon: Magnet, label: "Magnetic drive coupling", desc: "Motor and impeller connected magnetically — no shaft seal, no leak risk" },
+  { icon: CircleDot, label: "LED status ring", desc: "Battery level, filter status & flow indication at a glance" },
+  { icon: Filter, label: "Sediment pre-filter", desc: "Protects the impeller and improves water quality" },
+  { icon: Gauge, label: "Pressure & flow sensors", desc: "Auto-activates on flow detection, ramps pump speed, shuts off when flow stops" },
+  { icon: RotateCcw, label: "Stabilisation chamber", desc: "Smooths turbulent output for consistent, even spray" },
 ];
 
 const ProductConceptSection = () => {
@@ -21,7 +21,7 @@ const ProductConceptSection = () => {
           Meet <span className="text-gradient">ShowerBoost</span>
         </h2>
         <p className="text-muted-foreground text-lg leading-relaxed">
-          A compact inline device that screws between your shower pipe and shower head. No tools, no plumber, no hassle.
+          A compact inline device that screws between your shower arm and shower head using standard ½″ BSP threads. No tools, no plumber, no hassle.
         </p>
       </div>
 
@@ -66,7 +66,7 @@ const ProductConceptSection = () => {
         </div>
       </div>
 
-      {/* Recirculation callout */}
+      {/* Internal architecture callout */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -74,10 +74,10 @@ const ProductConceptSection = () => {
         className="glass-card rounded-2xl p-8 max-w-2xl mx-auto text-center"
       >
         <RotateCcw className="mx-auto mb-3 text-primary" size={32} />
-        <h3 className="font-heading font-bold text-lg mb-2">Micro-Recirculation Technology</h3>
+        <h3 className="font-heading font-bold text-lg mb-2">Dual-Chamber Architecture</h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          A small portion of water cycles through an internal chamber before exiting, stabilising flow and amplifying pressure.
-          This reduces energy use and improves shower feel even when incoming pressure is very low.
+          The wet chamber contains the impeller and water path. The dry chamber houses the motor, battery, and electronics.
+          Magnetic coupling connects them without a physical shaft — eliminating the primary waterproofing failure point used in traditional pumps.
         </p>
       </motion.div>
     </div>

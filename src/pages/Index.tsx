@@ -89,6 +89,10 @@ const Index = () => {
         <WhyNotExistSection />
       </SectionWrapper>
 
+      <SectionWrapper id="engineering">
+        <EngineeringDeepDiveSection />
+      </SectionWrapper>
+
       <SectionWrapper id="whats-in-the-box">
         <WhatsInTheBoxSection />
       </SectionWrapper>
